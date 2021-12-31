@@ -6,7 +6,7 @@ export const Container = styled.header`
 
 export const Content = styled.main`
     width: 95%;
-    max-width: 1120px;
+    max-width: 1280px;
     margin: 0 auto;
 
     display: flex;

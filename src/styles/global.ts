@@ -25,5 +25,11 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background: var(--background);
         -webkit-font-smoothing: antialiased;
+        color: #FFF;
+    }
+    a {
+        font-family: 'Manrope', sans-serif;
+        font-size: 16pt;
+        font-weight: 500;
     }
 `
