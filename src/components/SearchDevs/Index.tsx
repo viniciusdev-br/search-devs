@@ -78,7 +78,7 @@ export function SearchDevs() {
                 </button>
             </div>
 
-            <div className={firstClick ? "card-dev-transparent" : "card-dev"}>
+            <div className={firstClick? "card-dev-transparent" : "card-dev"}>
                 <img src={user?.avatar_url} alt="Imagem de perfil" onClick={() => {
                     setIsProfileModalOpen(true);
                     setOpenDetails(true);
