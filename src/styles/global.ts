@@ -35,10 +35,9 @@ export const GlobalStyle = createGlobalStyle`
     }
     .modal-profile-dev {
         width: 100%;
-        max-width: 750px;
+        max-width: 1250px;
         padding: 3rem;
         border-radius: 10px;
-        position: relative;
         background: #FFF;
         color: #000;
 
@@ -55,8 +54,30 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         img {
-            width: 400px;
+            width: 370px;
             border-radius: 10px;
+        }
+        .container-table {
+            margin-top: 1rem;
+            width: 100%;
+            height: 300px;
+            overflow: auto;
+        }
+        table {
+            margin-top: 2rem;
+            width: 100%;
+            border-spacing: 0rem 0.5rem;
+            text-align: center;
+
+            tbody {
+                font-family: 'Manrope'
+            }
+
+            td {
+                max-width: 2rem;
+                background: #ffd9fb;
+                border-radius: 0.20rem;
+            }
         }
     }
     .react-modal-overlay {

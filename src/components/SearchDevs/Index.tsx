@@ -15,10 +15,22 @@ interface UserType {
     public_repos: number
 } 
 
+interface UserRepoType {
+    id: number,
+    name: string,
+    languages_url: string,
+    description: string,
+    created_at: string,
+    updated_at: string
+}
+
 export function SearchDevs() {
     const [user, setUser] = useState<UserType>();
+    const [repositories, setRespositories] = useState<UserRepoType[]>();
     const [nickname, setNickname] = useState(""); 
     const [sending, setSending] = useState(false);
+    const [openDetails, setOpenDetails] = useState(false);
+    const [firstClick, setFirstClick] = useState(true);
     const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
     useEffect(() => {
@@ -26,13 +38,23 @@ export function SearchDevs() {
         .then((response) => {
             setUser(response.data)
             setSending(false);
-            console.log(user);
-            console.log(typeof(user));
         })
         .catch((error) => {
             console.log('Erro encontrado: ' + error);
         });
     }, [sending]); 
+
+    useEffect(() => {
+        api.get("/users/" + nickname + "/repos")
+        .then((response) => {
+            setRespositories(response.data);
+            setOpenDetails(false);
+            console.log(repositories);
+        })
+        .catch((error) => {
+            console.log('Erro encontrado: ' + error);
+        });
+    }, [openDetails])
 
     function handleCloseProfileModal() {
         setIsProfileModalOpen(false);
@@ -47,13 +69,21 @@ export function SearchDevs() {
                     onChange={event => setNickname(event.target.value)}
                     id="inputDev"
                 />
-                <button onClick={() => setSending(true)}>
+                <button onClick={() => {
+                    setSending(true);
+                    setFirstClick(false);
+                    }
+                }>
                     <img src={ lupaSearch } alt="Pesquisar" />
                 </button>
             </div>
 
-            <div className="card-dev">
-                <img src={user?.avatar_url} alt="Imagem de perfil" onClick={() => setIsProfileModalOpen(true)}/>
+            <div className={firstClick ? "card-dev-transparent" : "card-dev"}>
+                <img src={user?.avatar_url} alt="Imagem de perfil" onClick={() => {
+                    setIsProfileModalOpen(true);
+                    setOpenDetails(true);
+                }
+                }/>
                 <h3>{user?.name}</h3>
                 <p>{user?.login}</p>
                 <p>{user?.location}</p>
@@ -64,7 +94,7 @@ export function SearchDevs() {
                 overlayClassName="react-modal-overlay"
                 className="modal-profile-dev"
             >
-                <div className="card-dev">
+                <div>
                     <img src={user?.avatar_url} alt="Imagem de perfil" onClick={() => setIsProfileModalOpen(true)}/>
                     <h3>{user?.name}</h3>
                     <p>{user?.login}</p>
@@ -74,7 +104,7 @@ export function SearchDevs() {
                     <p>{user?.public_repos} public repositories</p>
                 </div>
 
-                <div>
+                <div className="container-table">
                     <table>
                         <thead>
                             <tr>
@@ -86,6 +116,16 @@ export function SearchDevs() {
                             </tr>
                         </thead>
                         <tbody>
+
+                            {repositories?.map(repo => (
+                                <tr key={repo.id}>
+                                    <td>{repo.name}</td>
+                                    <td>Javascript</td>
+                                    <td>{repo.description}</td>
+                                    <td>{repo.created_at}</td>
+                                    <td>{repo.updated_at}</td>
+                                </tr>
+                            ))}
 
                         </tbody>
                     </table>

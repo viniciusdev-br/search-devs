@@ -49,5 +49,10 @@ export const Container = styled.main`
             width: 24rem;
         }
     }
+
+    .card-dev-transparent {
+        display: none;
+    }
+    
 `;
 
