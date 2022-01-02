@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.main`
     margin-top: 5rem;
     display: flex;
-    justify-content: center;
-
-
+    flex-direction: column;
+    align-items: center;
+    //background: radial-gradient(circle, rgba(112,0,255,1) 11%, rgba(0,0,0,1) 33%);
+    transition: 200ms;
     div {
         display: flex;
     }
@@ -30,6 +31,22 @@ export const Container = styled.main`
         &:hover {
             width: 7rem;
             filter: brightness(110%);
+        }
+    }
+    .card-dev {
+        flex-direction: column;
+        margin-top: 5rem;
+        text-align: center;
+        font-size: 18pt;
+        img {
+            width: 23rem;
+            border-radius: 20px;
+            transition: 200ms;
+            cursor: pointer;
+        }
+
+        img:hover {
+            width: 24rem;
         }
     }
 `;
