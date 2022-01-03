@@ -7,7 +7,7 @@ export function Header(){
             <Content>
                 <img src={logoClickSoft} alt="Logo ClickSoftTest" />
                 <div>
-                    <a href="https://www.clicksoft.com.br/">ClickSoft</a>
+                    <a href="https://github.com/viniciusdev-br/search-devs">Repository</a>
                     <a href="https://github.com/viniciusdev-br">viniciusdev-br</a>
                     <a href="#inputDev" className="search-now">Search Now</a>
                 </div>
