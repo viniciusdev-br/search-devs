@@ -30,13 +30,13 @@ export const GlobalStyle = createGlobalStyle`
     }
     a {
         font-family: 'Manrope', sans-serif;
-        font-size: 16pt;
+        font-size: 14pt;
         font-weight: 500;
     }
     .modal-profile-dev {
         width: 100%;
         max-width: 1250px;
-        padding: 3rem;
+        padding: 1.5rem;
         border-radius: 10px;
         background: #FFF;
         color: #000;
@@ -54,13 +54,13 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         img {
-            width: 370px;
+            width: 18rem;
             border-radius: 10px;
         }
         .container-table {
             margin-top: 1rem;
             width: 100%;
-            height: 300px;
+            height: 16rem;
             overflow: auto;
         }
         table {
@@ -81,7 +81,7 @@ export const GlobalStyle = createGlobalStyle`
                 a {
                     text-decoration: none;
                     font-family: 'Manrope';
-                    font-size: 14pt;
+                    font-size: 12pt;
                 }
             }
         }

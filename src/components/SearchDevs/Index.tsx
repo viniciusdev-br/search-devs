@@ -75,11 +75,11 @@ export function SearchDevs() {
                     setFirstClick(false);
                     }
                 }>
-                    <img src={ lupaSearch } alt="Pesquisar" />
+                    <a href="#card-dev"><img src={ lupaSearch } alt="Pesquisar" /></a> 
                 </button>
             </div>
 
-            <div className={firstClick? "card-dev-transparent" : "card-dev"}>
+            <div className={firstClick? "card-dev-transparent" : "card-dev"} id="card-dev">
                 <img src={user?.avatar_url} alt="Imagem de perfil" onClick={() => {
                     setIsProfileModalOpen(true);
                     setOpenDetails(true);

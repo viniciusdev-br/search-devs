@@ -11,7 +11,7 @@ export const Content = styled.main`
 
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1.5rem;
 
     a {
         text-decoration: none;

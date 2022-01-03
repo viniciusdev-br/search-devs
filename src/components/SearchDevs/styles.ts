@@ -12,15 +12,15 @@ export const Container = styled.main`
     }
 
     input {
-        height: 4rem;
-        width: 28rem;
+        height: 3.5rem;
+        width: 26rem;
         border: none;
         border-radius: 100px;
         text-align: center;
         font-size: 18pt;
     }
     button {
-        height: 4rem;
+        height: 3.5rem;
         width: 6.3rem;
         background-color: var(--pink);
         margin-left: 1.3rem;
@@ -37,16 +37,16 @@ export const Container = styled.main`
         flex-direction: column;
         margin-top: 5rem;
         text-align: center;
-        font-size: 18pt;
+        font-size: 14pt;
         img {
-            width: 23rem;
+            width: 22rem;
             border-radius: 20px;
             transition: 200ms;
             cursor: pointer;
         }
 
         img:hover {
-            width: 24rem;
+            width: 23rem;
         }
     }
 

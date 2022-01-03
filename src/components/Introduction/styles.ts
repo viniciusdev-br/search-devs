@@ -7,7 +7,7 @@ export const Container = styled.section`
     margin-top: 5.5rem;
     h1 {
         font-family: 'Manrope';
-        font-size: 60pt;
+        font-size: 55pt;
         font-weight: 800;
         text-align: center;
         max-width: 770px;
