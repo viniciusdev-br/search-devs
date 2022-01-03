@@ -77,6 +77,12 @@ export const GlobalStyle = createGlobalStyle`
                 max-width: 2rem;
                 background: #ffd9fb;
                 border-radius: 0.20rem;
+
+                a {
+                    text-decoration: none;
+                    font-family: 'Manrope';
+                    font-size: 14pt;
+                }
             }
         }
     }

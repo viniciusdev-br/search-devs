@@ -21,7 +21,9 @@ interface UserRepoType {
     languages_url: string,
     description: string,
     created_at: string,
-    updated_at: string
+    updated_at: string,
+    language: string,
+    html_url: string,
 }
 
 export function SearchDevs() {
@@ -40,7 +42,7 @@ export function SearchDevs() {
             setSending(false);
         })
         .catch((error) => {
-            console.log('Erro encontrado: ' + error);
+            console.log(error)
         });
     }, [sending]); 
 
@@ -49,7 +51,6 @@ export function SearchDevs() {
         .then((response) => {
             setRespositories(response.data);
             setOpenDetails(false);
-            console.log(repositories);
         })
         .catch((error) => {
             console.log('Erro encontrado: ' + error);
@@ -119,11 +120,11 @@ export function SearchDevs() {
 
                             {repositories?.map(repo => (
                                 <tr key={repo.id}>
-                                    <td>{repo.name}</td>
-                                    <td>Javascript</td>
+                                    <td><a href={repo.html_url} target="_blank">{repo.name}</a></td>
+                                    <td>{repo.language}</td>
                                     <td>{repo.description}</td>
-                                    <td>{repo.created_at}</td>
-                                    <td>{repo.updated_at}</td>
+                                    <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(repo.created_at))}</td>
+                                    <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(repo.updated_at))}</td>
                                 </tr>
                             ))}
 
